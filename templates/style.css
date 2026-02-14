@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(255, 190, 68, 0.7), rgba(0,0,0,0.7));
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-family: Gill Sans, sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    text-shadow: 0 0 10px
+}
+
+header {
+    background: linear-gradient(110deg, rgb(255, 248, 148), rgb(128, 125, 82));
+    position: relative;
+    height: 200px;
+    padding:5px;
+    margin: 5px;
+    bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+}
+
+h2 {
+    font-size: 30px;
+    font-family: Gill Sans, sans-serif;
+}
+
+main {
+    background: linear-gradient(135deg, rgba(243, 239, 177), rgb(252, 238, 118));
+    border-radius: 10px;
+    padding: 8px;
+    margin: 7px;
+    box-shadow: 0 0 6px rgb(27, 27, 27);
+}
+
+button {
+    background: rgb(209, 189, 77);
+    width: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(109, 95, 18);
+    border: 0;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.upButton {
+    width: 60px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgb(245, 245, 147);
+    transform: scale(1.1);
+    width: 65px;
+}
+
+button:active {
+    background: rgb(230, 208, 89);
+}
+
+.balance-card {
+    background: linear-gradient(210deg, rgb(83, 82, 55), rgb(252, 238, 118));
+    border-radius: 10px;
+    padding: 8px;
+    margin: 7px;
+    box-shadow: 0 0 6px rgb(27, 27, 27);
+}
+.dep {
+    width: 60px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.upgrades {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgba(243, 239, 177), rgb(252, 238, 118));
+    border-radius: 10px;
+    padding: 8px;
+    margin: 7px;
+    box-shadow: 0 0 6px rgb(27, 27, 27);
+}
+
+.add-to-earn {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 5px
+}
+
+.buttons {
+    display: flex;
+    gap: 13px;
+    margin-top: 5px;
+}
+
+.upgrade-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.upgrades-text {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+.upgrades-row {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.passEarn {
+    margin-top: 10px;
+    font-size: 20px;
+    margin: 5px
+}
+
