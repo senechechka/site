@@ -9,45 +9,49 @@
     <h1>Казино🚫</h1>
 </header>
 
-<main>
-    <h2>Выберите ставу:</h2>
-    <p>Ставка сейчас - <span id = "stavka"></span>$</p>
-    <button onClick = "stavkaChange(5)">5</button>
-    <button onClick = "stavkaChange(10)">10</button>
-    <button onClick = "stavkaChange(20)">20</button>
-    <button onClick = "stavkaChange(50)">50</button>
-</main>
 
 <body>
-    <div class="balance-card">
-        <p>Ваш баланс - <span id = "balance"></span>$</p>
-        <button onClick = "krutit()" class = "dep">Крутить</button>
-        <button onClick = "AllIn()" class = "dep">All In</button>
-        <p id = "result"></p>
-    </div>
-
-    <div class = "upgrades">
-        <p class = "upgrades-text">Улучшения:</p>
-        <div class = "upgrades-row">
-            <div class = "upgrade-block">
-                <ol>
-                    <li class = "add-to-earn">Майнеры - </li>
-                </ol>
-                <div class = "buttons">
-                    <button onClick = "miner(1)" class = "upButton">LvL1 miner <p id = "costOne">1000$</p></button>
-                    <button onClick = "miner(2)" class = "upButton">LvL2 miner <p id = "costTwo">5000$</p></button>
-                    <button onClick = "miner(3)" class = "upButton">LvL3 miner <p id = "costThree">15000$</p></button>
-                </div>    
-                <p class = "passEarn">Пасивный доход - <span id = "passivEarn"></span>$</p>
+    <div class = "content-page">
+        <main>
+            <div class = "content-page">
+                <h2>Выберите ставу:</h2>
+                <p>Ставка сейчас - <span id = "stavka"></span>$</p>
+                <button onClick = "stavkaChange(5)">5</button>
+                <button onClick = "stavkaChange(10)">10</button>
+                <button onClick = "stavkaChange(20)">20</button>
+                <button onClick = "stavkaChange(50)">50</button>
             </div>
-            <div class = "upgrade-block">
-                <ol>
-                    <li class = "add-to-earn">Доп. зароботок для депа - </li>
-                </ol>
-                <div class = "buttons">
-                    <button onClick = "addToDep()" class = "upButton">LvL1 доп. <p>3000$</p></button>
-                    <button onClick = "addToLose()" class = "upButton">LvL2 доп. <p>7500$</p></button>
-                    <button onClick = "addProcToDep()" class = "upButton">LvL3 доп. <p>25000$</p></button>
+        </main>
+        <div class="balance-card">
+            <p>Ваш баланс - <span id = "balance"></span>$</p>
+            <button onClick = "addToLose(); krutit()" class = "dep">Крутить</button>
+            <button onClick = "AllIn()" class = "dep">All In</button>
+            <p id = "result"></p>
+        </div>
+
+        <div class = "upgrades">
+            <p class = "upgrades-text">Улучшения:</p>
+            <div class = "upgrades-row">
+                <div class = "upgrade-block">
+                    <ol>
+                        <li class = "add-to-earn">Майнеры - </li>
+                    </ol>
+                    <div class = "buttons">
+                        <button onClick = "miner(1)" class = "upButton">LvL1 miner <p id = "costOne">1000$</p></button>
+                        <button onClick = "miner(2)" class = "upButton">LvL2 miner <p id = "costTwo">5000$</p></button>
+                        <button onClick = "miner(3)" class = "upButton">LvL3 miner <p id = "costThree">15000$</p></button>
+                    </div>    
+                    <p class = "passEarn">Пасивный доход - <span id = "passivEarn"></span>$</p>
+                </div>
+                <div class = "upgrade-block">
+                    <ol>
+                        <li class = "add-to-earn">Доп. зароботок для депа - </li>
+                    </ol>
+                    <div class = "buttons">
+                        <button onClick = "addToDep()" class = "upButton">LvL1 доп. <p>3000$</p></button>
+                        <button onClick = "addToLoseStatus()" class = "upButton">LvL2 доп. <p>7500$</p></button>
+                        <button onClick = "addProcToDep()" class = "upButton">LvL3 доп. <p>25000$</p></button>
+                    </div>
                 </div>
             </div>
         </div>

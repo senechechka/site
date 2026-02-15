@@ -1,5 +1,5 @@
 let stavka = 10;
-let balance = 250;
+let balance = 7550;
 let win = 0;
 document.getElementById('stavka').innerText = stavka;
 document.getElementById('balance').innerText = balance;
@@ -18,8 +18,8 @@ let stavkaAdd = 0;
 
 document.getElementById('passivEarn').innerText = 0;
 
-let addToDepStatus = false;
-let addToLoseStatus = false;
+let addToDepStatus = false; 
+let addToLoseStatusPer = false;
 let addToLoseStavka = null;
 
 console.clear();
@@ -49,15 +49,20 @@ function stavkaChange(count) {
 }
 
 function addToLose() {
-    if (!addToLoseStatus) {
+    if (addToLoseStatusPer) {
+        if (stavka === 5) stavkaAdd = 2.5;
+        else if (stavka === 10) stavkaAdd = 5;
+        else if (stavka === 20) stavkaAdd = 10;
+        else if (stavka === 50) stavkaAdd = 25;
+    }
+}
+
+function addToLoseStatus() {
+    if (!addToLoseStatusPer) {
         if (balance >= 7500) {
             balance -= 7500;
+            addToLoseStatusPer = true;
             document.getElementById('balance').innerText = balance;
-            if (stavka === 5) stavkaAdd = 2.5;
-            else if (stavka === 10) stavkaAdd = 5;
-            else if (stavka === 20) stavkaAdd = 10;
-            else if (stavka === 50) stavkaAdd = 25;
-            addToLoseStatus = true;
         } else {
             document.getElementById('result').innerText = "❌Недостаточно денег";
         }
@@ -72,7 +77,7 @@ function krutit() {
     } else if (balance >= stavka) {
         let random = Math.floor(Math.random() * 100);
 
-        balance -= stavka
+        balance -= stavka;
 
         if (random < 15) {
             balance += win+prize;
@@ -80,11 +85,10 @@ function krutit() {
             stats.wins++;
             let winStats = win+prize;
             transactions.unshift('+' + winStats);
-             showInfo();
+            showInfo();
         } else {
-            if (addToLoseStatus) {
-                balance += stavka;
-                balance -= stavkaAdd;
+            if (addToLoseStatusPer) {
+                balance += stavkaAdd;
             }
             document.getElementById('result').innerText = "😪Вы проиграли, додепывай";
             document.getElementById('balance').innerText = balance;
