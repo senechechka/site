@@ -1,5 +1,5 @@
 let stavka = 10;
-let balance = 26000;
+let balance = 250;
 let win = 0;
 document.getElementById('stavka').innerText = stavka;
 document.getElementById('balance').innerText = balance;
