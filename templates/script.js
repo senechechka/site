@@ -1,5 +1,5 @@
 let stavka = 10;
-let balance = 7550;
+let balance = 26000;
 let win = 0;
 document.getElementById('stavka').innerText = stavka;
 document.getElementById('balance').innerText = balance;
@@ -21,8 +21,15 @@ document.getElementById('passivEarn').innerText = 0;
 let addToDepStatus = false; 
 let addToLoseStatusPer = false;
 let addToLoseStavka = null;
+let autoDepStatusPer = false;
 
 console.clear();
+
+function showInfo() {
+    console.clear();
+    console.log(stats);
+    console.log(transactions);
+}
 
 function addToDep() {
     if (!addToDepStatus) {
@@ -35,12 +42,6 @@ function addToDep() {
             document.getElementById('result').innerText = "❌Недостаточно денег";
         }
     }
-}
-
-function showInfo() {
-    console.clear();
-    console.log(stats);
-    console.log(transactions);
 }
 
 function stavkaChange(count) {
@@ -99,6 +100,28 @@ function krutit() {
     }
 document.getElementById('balance').innerText = balance;
 }
+
+function autoDepStatus() {
+    if (!autoDepStatusPer) {
+        if (balance >= 25000) {
+            balance -= 25000;
+            document.getElementById('balance').innerText = balance;
+            autoDepStatusPer = true;
+        }
+    } else {
+        document.getElementById('result').innerText = "❌Недостаточно денег";
+    }
+}
+function autoDep() {
+    if (autoDepStatusPer) {
+        addToLose();
+        krutit();
+    }
+}
+
+let depInterval = setInterval(() => {
+    autoDep()
+}, 1250)
 
 function AllIn() {
     let oldBalance = balance;
